@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Etch-a-sketch</title>
+</head>
+<body>
+	<header>
+		<h1 class="title">Etch-a-sketch</h1>
+	</header>
+	<main>
+		<div class="options">
+			<label for="number">Insert a number to resize the grid <br>(max 60)</label>
+			<input type="text" class="number" name="number" value = "16" placeholder="16">
+			<button class="resize">Resize the grid</button>
+			<button class="reset">Reset the grid</button>
+			<button class="RGB-color">Random color</button>
+			<button class="black-shade">Shade of black</button>
+			<label for="color-input">Pick a color:</label>
+			<input type="color" name="color-input" class="color-input">
+		</div>
+		<div class="container"></div>
+	</main>
+	<p class="info">Quick tip: To start drawing - click on any cell!</p>
+	<script src="script.js"></script>
+</body>
+</html>
