@@ -2,8 +2,8 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #c21500;
-	background: -webkit-linear-gradient(to left, #c21500, #ffc500);
-	background: linear-gradient(to left, #c21500, #ffc500);
+	background: -webkit-linear-gradient(35deg, #CCFFFF, #FFCCCC);
+	background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
 	font-family: Arial, sans-serif;
 }
 main {
