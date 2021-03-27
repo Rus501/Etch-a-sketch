@@ -1,3 +1,6 @@
+* {
+	box-sizing: border-box;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -17,12 +20,11 @@ main {
 	min-height: 500px;
 	/*box-shadow: 0 0 10px 10px #00000045;*/
 	display: grid;
+	border: 1px solid #000;
 	background: #000;
 	grid-gap: 1px;
 }
 .grid-cell {
-	border: 1px solid #000;
-	box-sizing: border-box;
 	background: #fff;
 }
 .hovered {
@@ -85,7 +87,6 @@ header {
 .number {
 	width: 170px;
 	height: 30px;
-	box-sizing: border-box;
 	margin: 5px 0 10px 0;
 	padding: 0 10px;
 }
