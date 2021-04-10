@@ -8,7 +8,7 @@ const buttonRGB = document.querySelector('.RGB-color');
 const buttonShadeOfBlack = document.querySelector('.black-shade');
 const pickedColor = document.querySelector('.color-input');
 
-//adding event listeners for buttons
+//event listeners for buttons
 resizeButton.addEventListener('click', resizeGrid);
 resetButton.addEventListener('click', resetGrid);
 buttonRGB.addEventListener('click', setRandomColor);
@@ -39,7 +39,7 @@ function resizeGrid() {
 		alert('Please type a number less than 60.');
 		return;
 	} else {
-		container.innerHTML = ''; //removing old grid before building new one
+		container.innerHTML = '';
 		buildTheGrid(cellsNew);
 	}
 }
@@ -49,15 +49,10 @@ function resizeGrid() {
 function resetGrid() {
   let allGridCells = document.querySelectorAll('.grid-cell');
   allGridCells.forEach(cell => {
-	cell.style.backgroundColor = '#fff';
+	cell.style.backgroundColor = 'rgba(0, 0, 0, 0)';
   })
 }
-function resetGridShadeOfBlack() {
-  let allGridCells = document.querySelectorAll('.grid-cell');
-  allGridCells.forEach(cell => {
-	cell.style.backgroundColor = 'rgba(0, 0, 0, 0.01)'; //0.01 for the shade of black
-  })
-}
+
 
 //random color
 function setRandomColor() {
@@ -74,15 +69,16 @@ function setRandomColor() {
 
 //shade of black
 function setColorShadeOfBlack() {
-	resetGridShadeOfBlack();
+	resetGrid();
 	let allGridCells = document.querySelectorAll('.grid-cell');
 	allGridCells.forEach(cell => {
 		cell.onmouseover = function() {
-			let currentOpacity = Number(cell.style.backgroundColor.slice(-4, -1));
+			if (cell.style.backgroundColor === 'rgb(0, 0, 0)') return;
+			let currentOpacity = Number(cell.style.backgroundColor.slice(-3, -1));
 			if (currentOpacity < 1) {
 				cell.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
 			} else {
-				cell.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+				cell.style.backgroundColor = 'rgba(0, 0, 0, 0.99)';
 			}
 		}
 	})

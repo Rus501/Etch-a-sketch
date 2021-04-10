@@ -23,9 +23,9 @@ main {
 	background: #fff;
 }
 .grid-cell {
+	border: 1px solid #000;
 	outline: 1px solid #000;
 	background: #fff;
-	opacity: 1;
 }
 .hovered {
 	background: #000;
