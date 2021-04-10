@@ -9,8 +9,8 @@ const buttonShadeOfBlack = document.querySelector('.black-shade');
 const pickedColor = document.querySelector('.color-input');
 
 //adding event listeners for buttons
-resizeButton.addEventListener('click', resizeTheGrid);
-resetButton.addEventListener('click', resetTheGrid);
+resizeButton.addEventListener('click', resizeGrid);
+resetButton.addEventListener('click', resetGrid);
 buttonRGB.addEventListener('click', setRandomColor);
 buttonShadeOfBlack.addEventListener('click', setColorShadeOfBlack);
 pickedColor.addEventListener('input', setPickedColor);
@@ -33,7 +33,7 @@ function buildTheGrid(cells) {
 }
 
 
-function resizeTheGrid() {
+function resizeGrid() {
 	let cellsNew = document.querySelector('.number').value;
 	if (cellsNew > 60) {
 		alert('Please type a number less than 60.');
@@ -46,17 +46,22 @@ function resizeTheGrid() {
 
 
 //full reset
-function resetTheGrid() {
-	let allGridCells = document.querySelectorAll('.grid-cell');
-	allGridCells.forEach(cell => {
-		cell.style.backgroundColor = 'rgba(0, 0, 0, 0.01)'; //0.01 for the shade of black
-	})
+function resetGrid() {
+  let allGridCells = document.querySelectorAll('.grid-cell');
+  allGridCells.forEach(cell => {
+	cell.style.backgroundColor = '#fff';
+  })
 }
-
+function resetGridShadeOfBlack() {
+  let allGridCells = document.querySelectorAll('.grid-cell');
+  allGridCells.forEach(cell => {
+	cell.style.backgroundColor = 'rgba(0, 0, 0, 0.01)'; //0.01 for the shade of black
+  })
+}
 
 //random color
 function setRandomColor() {
-	resetTheGrid();
+	resetGrid();
 	let allGridCells = document.querySelectorAll('.grid-cell');
 	allGridCells.forEach(cell => {
 		cell.onmouseover = function() {
@@ -69,7 +74,7 @@ function setRandomColor() {
 
 //shade of black
 function setColorShadeOfBlack() {
-	resetTheGrid();
+	resetGridShadeOfBlack();
 	let allGridCells = document.querySelectorAll('.grid-cell');
 	allGridCells.forEach(cell => {
 		cell.onmouseover = function() {
@@ -86,7 +91,7 @@ function setColorShadeOfBlack() {
 
 //chosen color
 function setPickedColor() {
-	resetTheGrid();
+	resetGrid();
 	let allGridCells = document.querySelectorAll('.grid-cell');
 	allGridCells.forEach(cell => {
 		cell.onmouseover = function() {
